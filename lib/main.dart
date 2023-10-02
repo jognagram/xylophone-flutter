@@ -4,11 +4,13 @@ import 'package:audioplayers/audioplayers.dart';
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
+  //Initialisation de audiocache && fonction pour le song
   void playSound(int soundNumber) {
     final player = AudioCache();
     player.play('note$soundNumber.wav');
   }
 
+  //Fonction pour les boutons du piano
   Expanded buildKey(
       {required Color backgroundColor, required int soundNumber}) {
     return Expanded(
@@ -17,7 +19,9 @@ class XylophoneApp extends StatelessWidget {
           playSound(soundNumber);
         },
         child: Text(''),
-        style: TextButton.styleFrom(backgroundColor: backgroundColor),
+        style: TextButton.styleFrom(
+          backgroundColor: backgroundColor,
+        ),
       ),
     );
   }
